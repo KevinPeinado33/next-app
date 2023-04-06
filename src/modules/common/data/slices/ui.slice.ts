@@ -1,11 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 
-export interface CounterState {
-  isOpenMenu: boolean
-}
+import { IUiState } from '../../interfaces'
 
-const initialState: CounterState = {
-  isOpenMenu: false,
+const initialState: IUiState = {
+  isOpenMenu: false
 }
 
 export const counterSlice = createSlice({

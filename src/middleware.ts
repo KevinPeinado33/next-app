@@ -1,16 +1,33 @@
-import { NextResponse } from 'next/server'
-import type { NextRequest } from 'next/server'
+import { type NextRequest, NextResponse } from 'next/server'
+import { jwtVerify } from 'jose'
 
-export function middleware(request: NextRequest) {
+export const middleware = async (request: NextRequest) => {
 
-    console.log(request.nextUrl)
+    const previousPage = request.nextUrl.pathname
 
-    return NextResponse.next()
+    try {
+
+        const token = request.cookies.get('x-token')?.value ?? ''
+
+        console.log({ token })
+    
+        await jwtVerify( 
+            token, 
+            new TextEncoder().encode( process.env.JWT_SECRET_SEED ) 
+        )
+
+        return NextResponse.next()
+
+    } catch ( error ) {
+        return NextResponse.redirect(
+            new URL(`/auth/login?p=${ previousPage }`, request.url)
+        )
+    }
 
 }
 
 export const config = {
     matcher: [
-        '/profile'
+        '/profile/:path*'
     ]
 }
