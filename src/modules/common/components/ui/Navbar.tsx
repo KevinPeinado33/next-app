@@ -1,5 +1,6 @@
 import NextLink from 'next/link'
 import { useRouter } from 'next/router'
+import NextImage from 'next/image'
 import { useSelector } from 'react-redux'
 import { 
     AppBar, 
@@ -12,14 +13,17 @@ import {
     Badge,
     InputAdornment,
     Input,
-    Avatar
+    Avatar,
+    colors
 } from '@mui/material'
 import {
-    ShoppingBagOutlined as ShoppingIcon,
+    QuestionAnswerOutlined as MessageIcon,
     SearchOutlined as SearchIcon,
-    NotificationsNoneOutlined as NotificationIcon
+    NotificationsNoneOutlined as NotificationIcon,
+    AddOutlined as AddIcon
 } from '@mui/icons-material'
 
+import logo from '../../../../../public/img/logo.png'
 import { RootState } from '../../data'
 
 export const Navbar = () => {
@@ -40,8 +44,12 @@ export const Navbar = () => {
                     display='flex' 
                     alignContent='center' 
                 >
-                    <Typography variant='h6' >Teslo |</Typography>
-                    <Typography sx={{ ml: 0.5 }} >Shop</Typography>
+                    <NextImage 
+                        alt='logo_app'
+                        width={45}
+                        height={45}
+                        src={ logo }
+                    />
                 </Link>
 
                 <Box flex={ 1 } />
@@ -67,6 +75,19 @@ export const Navbar = () => {
                 <Box flex={ 1 } />
 
                 <IconButton
+                    sx={{ 
+                        backgroundColor: colors.purple[600], 
+                        color: 'white',
+                        boxShadow: '0px 2px 4px rgba(0, 0, 0, 0.25)',
+                        marginRight: '5px'
+                    }}
+                    disabled={false}
+                    size='medium'                                
+                >
+                    <AddIcon />
+                </IconButton>
+
+                <IconButton
                     onClick={ () => console.log('b') }
                 >
                     <SearchIcon />
@@ -79,7 +100,7 @@ export const Navbar = () => {
                         badgeContent={ '9+' }
                         color='secondary'
                     >
-                        <ShoppingIcon />
+                        <MessageIcon />
                     </Badge>
                 </IconButton>
 

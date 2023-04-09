@@ -5,7 +5,7 @@ import { IUser } from '~/modules/auth/interfaces'
 import { IAuthState } from '../../interfaces'
 
 const initialState: IAuthState = {
-    isLoggedIn : false,
+    isLoggedIn : true,
     user       : undefined,
     isError    : false
 }

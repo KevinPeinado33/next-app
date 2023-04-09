@@ -7,7 +7,7 @@ const Home = () => {
       title='Truequin | Home'
       description='Pagina principal '
     >
-      <Typography variant='h1' component='h1' >Menú principal</Typography>
+      <Typography variant='h1' component='h1' >Busca todo ...</Typography>
     </MainLayout>
   )
 }
