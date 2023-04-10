@@ -1,6 +1,6 @@
 import { Box } from '@mui/material'
 
-import { CategoryChip } from './'
+import { CategoryChip } from '.'
 
 const categories = [
     'Ropa',
@@ -45,7 +45,10 @@ export const CategoriesHorizontal = () => {
 
             {
                 categories.map( category => (
-                    <CategoryChip key={ category } nameCategory={ category } />
+                    <CategoryChip 
+                        key={ category } 
+                        nameCategory={ category } 
+                    />
                 ))
             }
         </Box>

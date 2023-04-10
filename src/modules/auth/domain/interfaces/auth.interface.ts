@@ -1,4 +1,4 @@
-import { IUser } from '~/modules/auth/interfaces'
+import { IUser } from '~/modules/auth/domain/interfaces'
 
 export interface IAuthState {
 

@@ -1,8 +1,7 @@
 import { PayloadAction, createSlice } from '@reduxjs/toolkit'
 
-import { IUser } from '~/modules/auth/interfaces'
-
-import { IAuthState } from '../../interfaces'
+import { IUser } from '~/modules/auth/domain/interfaces'
+import { IAuthState } from '../../domain/interfaces'
 
 const initialState: IAuthState = {
     isLoggedIn : true,

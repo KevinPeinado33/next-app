@@ -1,10 +1,10 @@
-import { Box, Button, Typography } from '@mui/material'
+import { Box, Button, Typography, Grid } from '@mui/material'
 import NextImage from 'next/image'
 
 import imgBanner from '../../public/img/banner-principal.png'
 
 import { MainLayout } from '~/modules/common/components/layouts'
-import { CategoriesHorizontal } from '~/modules/objects/components'
+import { CategoriesHorizontal, CardHighlighted } from '~/modules/objects/presentation/components'
 
 const Home = () => {
   return (
@@ -51,7 +51,25 @@ const Home = () => {
       </Box>
       
       <Box sx={{ marginTop: '15px' }} />
+      
       <CategoriesHorizontal />
+
+      <Box sx={{ marginTop: '15px' }} />
+
+         
+      <Grid 
+        container 
+        columns={{ xs: 4, sm: 8, md: 12 }} 
+        spacing={{ xs: 2, md: 3 }}
+      >
+
+        <CardHighlighted />
+        <CardHighlighted />
+        <CardHighlighted />
+        <CardHighlighted />
+
+      </Grid>
+
 
     </MainLayout>
   )

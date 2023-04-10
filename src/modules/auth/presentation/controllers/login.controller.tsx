@@ -4,7 +4,7 @@ import { useRouter } from 'next/router'
 import { useSelector } from 'react-redux'
 
 import { RootState } from '~/modules/common/data'
-import { loginUseCase } from '../usecases'
+import { loginUseCase } from '../../domain/usecases'
 
 type FormData =  { email: string, password: string }
 

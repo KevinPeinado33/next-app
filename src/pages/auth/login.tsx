@@ -2,8 +2,8 @@ import { Box, Button, Chip, Grid, Link, TextField, Typography } from '@mui/mater
 import { ErrorOutline } from '@mui/icons-material'
 import NextLink from 'next/link'
 
-import { validations } from '~/modules/auth/utils'
-import { loginController } from '~/modules/auth/controllers'
+import { validations } from '~/modules/auth/data/utils'
+import { loginController } from '~/modules/auth/presentation/controllers'
 
 const LoginPage = () => {
 
