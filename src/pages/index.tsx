@@ -1,5 +1,10 @@
-import { Typography } from '@mui/material'
+import { Box, Button, Typography } from '@mui/material'
+import NextImage from 'next/image'
+
+import imgBanner from '../../public/img/banner-principal.png'
+
 import { MainLayout } from '~/modules/common/components/layouts'
+import { CategoriesHorizontal } from '~/modules/objects/components'
 
 const Home = () => {
   return (
@@ -7,7 +12,47 @@ const Home = () => {
       title='Truequin | Home'
       description='Pagina principal '
     >
-      <Typography variant='h1' component='h1' >Busca todo ...</Typography>
+      <Box
+        style={{
+          backgroundColor: '#975EF6',
+          color: '#fff',
+          padding: '10px 20px',
+          borderBottom: '2px solid #ccc',
+          fontWeight: 'bold',
+          textAlign: 'center',
+          borderRadius: '30px'
+        }}
+      >
+
+        <Typography variant='h1' >
+          Intercambia  objetos y da una segunda oportunidad a lo que ya no necesites.
+        </Typography>
+
+        <Typography variant='h6'>
+          Empieza a soltar para poder avanzar.
+        </Typography>
+
+        <Button
+          sx={{ backgroundColor: 'white' }}
+          size='large'
+        >
+          Crear meta
+        </Button>
+
+        <NextImage
+          alt='img-banner'
+          src={imgBanner}
+          style={{
+            width: '50%',
+            height: '50%'
+          }}
+        />
+
+      </Box>
+      
+      <Box sx={{ marginTop: '15px' }} />
+      <CategoriesHorizontal />
+
     </MainLayout>
   )
 }

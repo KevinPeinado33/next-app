@@ -36,7 +36,7 @@ export const MainLayout: FC< Props > = ({
             {/* Sidebar */}
 
             <main style={{
-                margin: '80px auto',
+                margin: '70px auto',
                 maxWidth: '1440px',
                 padding: '0px 30px'
             }}>
